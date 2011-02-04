@@ -37,13 +37,13 @@
 # DBPASSWORD=XXX
 
 # Host name (or IP address) of mongo server e.g localhost
-DBHOST=127.0.0.1
+DBHOST=md1.internal
 
 # Port that mongo is listening on 
 DBPORT=27017
 
 # Backup directory location e.g /backups
-BACKUPDIR="/var/backups/mongodb"
+BACKUPDIR="/home/hvf/mongo.backups"
 
 # Mail setup
 # What would you like to be mailed to you?
@@ -57,7 +57,7 @@ MAILCONTENT="stdout"
 MAXATTSIZE="4000"
 
 # Email Address to send mail to? (user@domain.com)
-#MAILADDR=XXX
+MAILADDR=logstew.backups@ram9.cc
 
 
 # ============================================================
