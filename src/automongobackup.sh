@@ -48,10 +48,10 @@ BACKUPDIR="/home/hvf/mongo.backups"
 # Mail setup
 # What would you like to be mailed to you?
 # - log   : send only log file
-# - files : send log file and sql files as attachments (see docs)
+# - files : send log file and sql files as attachments (see docs) - install mutt
 # - stdout : will simply output the log to the screen if run manually.
 # - quiet : Only send logs if an error occurs to the MAILADDR.
-MAILCONTENT="stdout"
+MAILCONTENT="files"
 
 # Set the maximum allowed email size in k. (4000 = approx 5MB email [see docs])
 MAXATTSIZE="4000"
@@ -393,7 +393,8 @@ else
 fi
 
 # TODO: Would be nice to know if there were any *actual* errors in the $LOGERR
-STATUS=1
+# cjs - status 1 says whole task failed - rely on mailer
+STATUS=0
 
 # Clean up Logfile
 eval rm -f "$LOGFILE"
