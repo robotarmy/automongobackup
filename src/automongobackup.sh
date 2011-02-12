@@ -188,7 +188,7 @@ LATEST="yes"
 #=====================================================================
 #=====================================================================
 #=====================================================================
-PATH=/usr/local/bin:/usr/bin:/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/home/mongo/hvf/bin
 DATE=`date +%Y-%m-%d_%Hh%Mm`				# Datestamp e.g 2002-09-21
 DOW=`date +%A`							# Day of the week e.g. Monday
 DNOW=`date +%u`						# Day number of the week 1 to 7 where 1 represents Monday
