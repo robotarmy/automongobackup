@@ -43,15 +43,14 @@ DBHOST=md1.internal
 DBPORT=27017
 
 # Backup directory location e.g /backups
-BACKUPDIR="/home/hvf/mongo.backups"
+BACKUPDIR="/home/hvf/Dropbox/server/$HOST/mongo.backups"
 
 # Mail setup
 # What would you like to be mailed to you?
 # - log   : send only log file
-# - files : send log file and sql files as attachments (see docs) - install mutt
 # - stdout : will simply output the log to the screen if run manually.
 # - quiet : Only send logs if an error occurs to the MAILADDR.
-MAILCONTENT="files"
+MAILCONTENT="log"
 
 # Set the maximum allowed email size in k. (4000 = approx 5MB email [see docs])
 MAXATTSIZE="4000"
@@ -373,10 +372,10 @@ exec 1>&7 7>&-      # Restore stdout and close file descriptor #7.
 
 if [ "$MAILCONTENT" = "log" ]
 then
-	cat "$LOGFILE" | mail -s "Mongo Backup Log for $HOST - $DATE" $MAILADDR
+	cat "$LOGFILE" | mutt -s "Mongo Backup Log for $HOST - $DATE" $MAILADDR
 	if [ -s "$LOGERR" ]
 		then
-			cat "$LOGERR" | mail -s "ERRORS REPORTED: Mongo Backup error Log for $HOST - $DATE" $MAILADDR
+			cat "$LOGERR" | mutt -s "ERRORS REPORTED: Mongo Backup error Log for $HOST - $DATE" $MAILADDR
 	fi
 else
 	if [ -s "$LOGERR" ]
