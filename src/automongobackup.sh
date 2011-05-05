@@ -43,7 +43,7 @@ DBHOST=md1.internal
 DBPORT=27017
 
 # Backup directory location e.g /backups
-BACKUPDIR="/home/hvf/Dropbox/server/$HOST/mongo.backups"
+BACKUPDIR="/home/hvf/backup/$HOST/mongo.backups"
 
 # Mail setup
 # What would you like to be mailed to you?
